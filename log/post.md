@@ -19,6 +19,6 @@ The current landscape has a few problems:
 
 Open protocols create open systems. Open code creates tools. **Open data creates open knowledge**. We need better tools, protocols, and mechanisms to improve the Open Data ecosystem. It should be easy to find, download, process, publish, and collaborate on open datasets.
 
-Iterative improvements over public datasets yield large amounts of value ([check how Dune did it with blockchain data](https://dune.com/blog/the-community-data-platform))¹. Access to data gives people the opportunity to create new business and make better decisions.
+Iterative improvements over public datasets yield large amounts of value ([check how Dune did it with blockchain data](https://dune.com/blog/the-community-data-platform)). Access to data gives people the opportunity to create new business and make better decisions.
 
 Open Source code has made a huge impact in the world. Let's make Open Data do the same! Let's make it possible for [anyone to fork and re-publish fixed, cleaned, reformatted datasets as easily as we do the same things with code](https://juan.benet.ai/blog/2014-02-21-data-management-problems/).
