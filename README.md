@@ -1,25 +1,15 @@
-# Data Collective Notes
+# Data Collective Notes 📝
 
 A collection of notes on Open Data by the people and for the people!
 
-In an hypothetical analogy with an art collective, this is:
+We are a group of individuals interested in Open Data and its potential to empower communities and democratize information. Our goal is to explore the problems and potential of Open Data.
 
-- People with shared interest and *practice*
-- Support for each other in path and efforts
-- A place to hangout and have fun
-- Do "exhibitions together"
-- Some degree of shared identity (e.g. exhibitions done under this shared banner)
-- Informal (no formal structure), no economic ties
+## Initiatives
 
-## Focus
-
-- Have our [knoweldgebase / digital garden](https://datahub.io/notes)
-  - Consolidate / update / clean old Datahub notes
-- Fireside chats idea clarified
-- Community building (even if just us)
-  - Coworking space / sessions
-  - Connection calls
+- Data Collective [notes, posts, and ideas](https://datahub.io/notes).
 - Newsletter
+- Fireside Chats
+- Community Building (coworking sessions, connection calls, brainstorms)
 
 ## Vision
 
@@ -38,17 +28,7 @@ The ultimate goal is to create a **more democratic, egalitarian, and innovative 
 
 In all of these, our intuition has converged on fact that to create something impactful means quality and sustainability which means income which means an enterprise.
 
-Specifically we an imagine:
-
-- Services cooperative
-  - Data engineering (building data infrastructure / fabric / management)
-  - Data analysis / science
-  - Data concierge (find and preparing data)
-- Products (cooperative)
-  - Data engineering tools (product) cooperative
-- Data marketplace (cooperative) - original data collective vision
-
-### Inspirations
+### Inspiration
 
 - [Mondragon](https://www.mondragon-corporation.com/en/)
 - [Penpot](https://penpot.app/)

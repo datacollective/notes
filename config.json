@@ -1,3 +1,10 @@
 {
-    "showSidebar": true
+    "title": "Data Collective Notes",
+    "description": "A collection of notes on Open Data by the people and for the people!",
+    "navbarTitle": {
+        "logo": "assets/logo.svg",
+        "text": "DataHub Collective Notes"
+    },
+    "showSidebar": true,
+    "logo": "assets/logo.svg"
 }
