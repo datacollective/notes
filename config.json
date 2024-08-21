@@ -3,7 +3,7 @@
     "description": "A collection of notes on Open Data by the people and for the people!",
     "navbarTitle": {
         "logo": "assets/logo.svg",
-        "text": "DataHub Collective Notes"
+        "text": "Data Collective Notes"
     },
     "showSidebar": true,
     "logo": "assets/logo.svg"

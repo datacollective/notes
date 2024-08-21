@@ -14,7 +14,6 @@
  2. Cloud Storage (Direct to Cloud Upload)
  3. CKAN Integration (CKAN extensions to call APIs)
 
-
 ## Main Architecture
 
 ### CKAN Extensions
@@ -22,37 +21,42 @@
 The solution has the following components:
 
 **[ckanext-external-storage](https://github.com/datopian/ckanext-external-storage)**: This extension will integrate the javascript sdk with CKAN.
- * Update resources form to upload files to the cloudstorage provider using the new Javascript SDK.
- * Update all the download points in CKAN to download the resources from the cloudstorage
- * Integrate [datapub](https://github.com/datopian/datapub) for data publishing flows
+
+* Update resources form to upload files to the cloudstorage provider using the new Javascript SDK.
+* Update all the download points in CKAN to download the resources from the cloudstorage
+* Integrate [datapub](https://github.com/datopian/datapub) for data publishing flows
 
 **[ckanext-authz-service](https://github.com/datopian/ckanext-authz-service):** This extension uses CKAN's built-in authentication and authorization capabilities to:
- * Generate JWT tokens and provide them via CKAN's Web API to clients.
- * Validate JWT tokens
+
+* Generate JWT tokens and provide them via CKAN's Web API to clients.
+* Validate JWT tokens
 
 This extension requires a RSA keypair for RS* signing & encryption.
 
 **[ckanext-versioning](https://github.com/datopian/ckanext-versioning)**: This CKAN extension adds a full data versioning capability to CKAN including:
- * Metadata and data is revisioned so that all updates create new revision and old versions of the metadata and data are accessible
- * Create and manage "revision tags" (named labels plus a description for a specific revision of a dataset e.g. "v1.0")
- * Diffs, reverting, etc
+
+* Metadata and data is revisioned so that all updates create new revision and old versions of the metadata and data are accessible
+* Create and manage "revision tags" (named labels plus a description for a specific revision of a dataset e.g. "v1.0")
+* Diffs, reverting, etc
 
 ### Giftless
 
 **[giftless](https://github.com/datopian/giftless):** Giftless is just a middleware service to get the location (URLs) of the files in the storage server so clients can interact with them through HTTP requests.
- * Given the sha256 and the filesize of a data file, the call to giftless it will return the signed URLs so the client (ckanext-external-storage) can do a dummy HTTP PUT request to upload and to verify the content
- * Validate the JWT token given by ckanext-authz-service
+
+* Given the sha256 and the filesize of a data file, the call to giftless it will return the signed URLs so the client (ckanext-external-storage) can do a dummy HTTP PUT request to upload and to verify the content
+* Validate the JWT token given by ckanext-authz-service
 
 Note: Giftless will require in it's configuration access to the public key created for ckanext-authz-service.
 
 ### Main libraries
 
 **[Javascript SDK](https://github.com/datopian/ckan-client-js):** This javascript SDK will contain the logic to be used in the browser to:
- * calculate file hashes,
- * get the authorization JWT from ckanext-authz-service
- * get signed urls from git lfs server (giftless)
- * upload the file to the cloud storage provider. (Basic HTTP PUT request to the signed url)
- * Verify the file. (HTTP GET request to the verify URL)
+
+* calculate file hashes,
+* get the authorization JWT from ckanext-authz-service
+* get signed urls from git lfs server (giftless)
+* upload the file to the cloud storage provider. (Basic HTTP PUT request to the signed url)
+* Verify the file. (HTTP GET request to the verify URL)
 
 **[metastore-lib](https://github.com/datopian/metastore-lib/)**: Library for storing dataset metadata, with versioning support and pluggable backends including GitHub.
 
@@ -129,7 +133,6 @@ ckanext.versioning.backend_config={"github_options": {"login_or_token": "{{GITHU
 
 The CKAN architecture is deployed using K8s and Helm charts: [https://github.com/datopian/ckan-cloud-helm](https://github.com/datopian/ckan-cloud-helm)
 
-
 **Giftless** needs a server of it's own so it is managed by K8s, the configs can be found in the [ckan-cloud-helm](https://github.com/datopian/ckan-cloud-helm) repository and it is currently configured [for Azure](https://github.com/datopian/giftless#azure-support) in ckan-cloud-helm repository.
 
 Example of the config map we are using at the moment:
@@ -159,4 +162,3 @@ MIDDLEWARE:
       x_port: 1
       x_prefix: 1
 ```
-

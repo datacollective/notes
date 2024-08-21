@@ -2,11 +2,11 @@
 
 ## What you can do?
 
-* Describe vizualizations in JSON and create interactive widgets 
+* Describe vizualizations in JSON and create interactive widgets
 * Customize dashboard layout using well-known HTML
-* Style dashboard design with TailwindCSS utility classes 
-* Rapidly create basic charts using "simple" graphing specification 
-* Create advanced widgets by utilizing "vega" visualization grammar 
+* Style dashboard design with TailwindCSS utility classes
+* Rapidly create basic charts using "simple" graphing specification
+* Create advanced widgets by utilizing "vega" visualization grammar
 
 ## How?
 
@@ -30,8 +30,8 @@ So that your dashboard will be available at https://domain.com/dashboards/your-d
 
 Note that your dashboard directory will contain 2 files:
 
-* `index.html` - [HTML template](#Set-up-your-layout)
-* `config.json` - [configurations for widgets](#Configure-vizualizations)
+* `index.html` - [HTML template](#set-up-your-layout)
+* `config.json` - [configurations for widgets](#configure-vizualizations)
 
 ### Set up your layout
 
@@ -98,15 +98,15 @@ Example of a minimal widget object:
 
 where:
 
-* `elementId` - is "id" of the HTML tag you want to use as a container of your widget. See [how we defined it here](#Set-up-your-layout).
+* `elementId` - is "id" of the HTML tag you want to use as a container of your widget. See [how we defined it here](#set-up-your-layout).
 * `view` - descriptor of a vizualization (widget).
   * `resources` - a list of resources needed for a widget and required manipulations (transformations).
-  	* `datasetId` - the id (name) of the dataset from which the resource is extracted.
-  	* `name` - name of the resource.
-  	* `transform` - transformations required for a resource (optional). If you want to learn more about transforms:
-  	  * Filtering data and applying formula: https://datahub.io/examples/transform-examples-on-co2-fossil-global#readme
-  	  * Sampling: https://datahub.io/examples/example-sample-transform-on-currency-codes#readme
-  	  * Aggregating data: https://datahub.io/examples/transform-example-gdp-uk#readme
+    * `datasetId` - the id (name) of the dataset from which the resource is extracted.
+    * `name` - name of the resource.
+    * `transform` - transformations required for a resource (optional). If you want to learn more about transforms:
+      * Filtering data and applying formula: https://datahub.io/examples/transform-examples-on-co2-fossil-global#readme
+      * Sampling: https://datahub.io/examples/example-sample-transform-on-currency-codes#readme
+      * Aggregating data: https://datahub.io/examples/transform-example-gdp-uk#readme
   * `specType` - type of a widget, e.g., `simple`, `vega` or `figure`.
   * `spec` - specification for selected widget type. See below for examples.
   * `title`, `legend`, `footer` - these are optional metadata for a widget. All must be a string.
@@ -147,7 +147,7 @@ Check out carbon emission per capita dashboard as an example of creating advance
 
 https://github.com/datopian/dashboards/tree/master/co2-emission-by-nation
 
-## Share it with the world!
+## Share it with the world
 
 To make your dashboard live on the data portal, you need to:
 
@@ -155,7 +155,6 @@ To make your dashboard live on the data portal, you need to:
 2. Wait until your work gets reviewed and merged into "master" branch.
 3. Implement any requested changes in your work.
 4. Done! Your dashboard is now available at https://domain.com/dashboards/your-dashboard-name
-
 
 ## Research
 

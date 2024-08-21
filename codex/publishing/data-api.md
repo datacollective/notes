@@ -37,7 +37,6 @@ Whilst Data APIs are in many ways more flexible than direct download they have d
 TODO: do more to compare and contrast download vs API access (e.g. what each is good for, formats,  etc)
 */}
 
-
 ### Why Data APIs?
 
 Data APIs underpin the following valuable functionality on the "read" side:
@@ -56,7 +55,6 @@ On the write side they provide support for:
 
 * **Rapidly updating data e.g. timeseries**: if you are updating a dataset every minute or every second you want an append operation and don't want to store the whole file every update just to add a single record
 * **Datasets stored as structured data by default** and which can therefore be updated in part, a few records at a time, rather than all at once (as with blob storage)
-
 
 ## Domain Model
 
@@ -173,11 +171,9 @@ When adding data I want to write new rows via the data API so that the new data 
 
 * ? do we also want a way to do bulk additions?
 
-
 ### DataStore
 
 When creating a Data API I want a structured data store (e.g. relational database) so that I can power the Data API and have it be fast, efficient and reliable.
-
 
 ## CKAN v2
 
@@ -193,16 +189,16 @@ In summary: the underlying storage is provided by a Postgres database. A dataset
 Here's how CKAN 2 implements the four components described above:
 
 * Read API: is provided by an API wrapper around Postgres. This is written as a CKAN extension written in Python and runs in process in the CKAN instance.
-	* Offers both classic Web API query and SQL queries.
-	* Full text, cross field search is provided via Postgres and creating an index  concatenating across fields.
-	* Also includes a write API and functions to create tables
+ 	* Offers both classic Web API query and SQL queries.
+ 	* Full text, cross field search is provided via Postgres and creating an index  concatenating across fields.
+ 	* Also includes a write API and functions to create tables
 * DataStore: a dedicated Postgres database (separate to the main CKAN database) with one table per resource.
 * Data Load: provided by either DataPusher (default) or XLoader. More details below.
-	* Utilize the CKAN jobs system to load data out of band
-	* Some reporting integrated into UI
-	* Supports tabular data (CSV or Excel) : this converts CSV or Excel into data that can be loaded into the Postgres DB.
+ 	* Utilize the CKAN jobs system to load data out of band
+ 	* Some reporting integrated into UI
+ 	* Supports tabular data (CSV or Excel) : this converts CSV or Excel into data that can be loaded into the Postgres DB.
 * Bulk Export: you can bulk download via the extension using the dump functionality https://docs.ckan.org/en/2.8/maintaining/datastore.html#downloading-resources
-	* Note however this will have problems with large resources either timing out or hanging the server
+ 	* Note however this will have problems with large resources either timing out or hanging the server
 
 ### Read API
 
@@ -218,10 +214,9 @@ See the DataStore extension: https://github.com/ckan/ckan/tree/master/ckanext/da
 
 ```sh
 curl -X POST http://127.0.0.1:5000/api/3/action/datastore_create \
-	-H "Authorization: {YOUR-API-KEY}" \
-	-d '{ "resource": {"package_id": "{PACKAGE-ID}"}, "fields": [ {"id": "a"}, {"id": "b"} ] }'
+ -H "Authorization: {YOUR-API-KEY}" \
+ -d '{ "resource": {"package_id": "{PACKAGE-ID}"}, "fields": [ {"id": "a"}, {"id": "b"} ] }'
 ```
-
 
 ### Data Load
 

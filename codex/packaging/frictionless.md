@@ -34,13 +34,13 @@ graph TD
   dp[Data Package] --> tdp
   jts[Table Schema] --> tdr
   csvddf[CSV Data Descriptor] --> tdr
-  
+
   style tdp fill:#f9f,stroke:#333,stroke-width:4px;
 ```
 
 Two different logics of grouping:
 
-* By function e.g. Tabular stuff ... 
+* By function e.g. Tabular stuff ...
   * Tabular Data package
   * Tabular Data resource
 * Inheritance / Composition structure

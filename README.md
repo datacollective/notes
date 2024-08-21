@@ -2,7 +2,7 @@
 
 A collection of notes on Open Data by the people and for the people!
 
-We are a group of individuals interested in Open Data and its potential to empower communities and democratize information. Our goal is to explore the problems and potential of Open Data.
+We are a group of individuals interested in Open Data and its potential to empower communities and democratize information. Our goal is to explore the problems and potential of Open Data in our society.
 
 ## Initiatives
 

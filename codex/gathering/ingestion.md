@@ -40,7 +40,7 @@ sequenceDiagram
   participant c as CKAN
   participant d as Loader
   participant e as DataStore
-  
+
   a->>c: create a resource with a location of remote file
   c->>d: push notification
   d->>b: pull it
@@ -59,7 +59,7 @@ sequenceDiagram
   participant c as CKAN
   participant d as Loader
   participant e as DataStore
-  
+
   a->>c: click on upload button
   c->>d: push notification
   d->>b: pull it
@@ -147,21 +147,20 @@ Specific examples:
 
 * No connection between DataStore system and CKAN validation extension powered by GoodTables https://github.com/frictionlessdata/ckanext-validation Thus, for example, users may edit the DataStore Data Dictionary and be confused that this has no impact on validation. More generally, data validation and data loading might naturally be part of one overall ETL process but Data Load system is not architected in a way that makes this easy to add.
 * No support for Frictionless Data spec sand their ability to specific incoming data structure (CSV format, encoding, column types etc).
-	* Dependent on error-prone guessing of types or manual type conversion
-	* Makes it painful to integrate with broader data processing pipeline (e.g. clean separation would allow type guessing to be optimized elsewhere in another part of the ETL pipeline)
+  * Dependent on error-prone guessing of types or manual type conversion
+  * Makes it painful to integrate with broader data processing pipeline (e.g. clean separation would allow type guessing to be optimized elsewhere in another part of the ETL pipeline)
 * Excel loading won't work or won't load all sheets
 * DataPusher
-	* https://github.com/ckan/ckanext-xloader#key-differences-from-datapusher
-	* Works terribly with loading a bit big data. It may for no reason crash after hour of loading. And after reload it goes along
-	* Is slow esp for large datasets and even smallish datasets e.g. 25Mb
-	* often fails due to e.g. data validation/casting errors but this not clear (and unsatisfying to the user)
+  * https://github.com/ckan/ckanext-xloader#key-differences-from-datapusher
+  * Works terribly with loading a bit big data. It may for no reason crash after hour of loading. And after reload it goes along
+  * Is slow esp for large datasets and even smallish datasets e.g. 25Mb
+  * often fails due to e.g. data validation/casting errors but this not clear (and unsatisfying to the user)
 * XLoader:
-	* Doesn't work with XLS(X)
-	* has problems fetching resources from Blob Storage (it fails and need to wait until the Resource is uploaded.)
-	* raising Exception NotFound when CKAN has a delay creating resources
-	* re-submits Resources when creating a new Resource
-	* XLoader sets `datastore_active` before data is uploaded
-
+  * Doesn't work with XLS(X)
+  * has problems fetching resources from Blob Storage (it fails and need to wait until the Resource is uploaded.)
+  * raising Exception NotFound when CKAN has a delay creating resources
+  * re-submits Resources when creating a new Resource
+  * XLoader sets `datastore_active` before data is uploaded
 
 ## CKAN v3
 

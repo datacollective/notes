@@ -43,6 +43,7 @@ The Datastore Query Builder interfaces with the Datastore API to allow users to 
 Map Builder allows users to build maps based on geo-data contained in tabular resources.
 
 Supported geo formats:
+
 * lon / lat (separate columns)
 
 ### [Chart Builder](https://github.com/datopian/chart-builder)
@@ -54,17 +55,22 @@ Chart Builder allows users to create charts and graphs from tabular data.
 ## Quick-start (Sandbox)
 
 * Clone the data explorer
+
 ```bash
-$ git clone git@gitlab.com:datopian/data-explorer.git
+git clone git@gitlab.com:datopian/data-explorer.git
 ```
+
 * Use yarn to install the project dependencies
+
 ```bash
-$ cd data-explorer
-$ yarn
+cd data-explorer
+yarn
 ```
-* To see the Data Explorer running in a sandbox environment run [Cosmos](https://github.com/react-cosmos/react-cosmos) 
+
+* To see the Data Explorer running in a sandbox environment run [Cosmos](https://github.com/react-cosmos/react-cosmos)
+
 ```bash
-$ yarn cosmos
+yarn cosmos
 ```
 
 ## Configuration
@@ -75,7 +81,7 @@ $ yarn cosmos
 
 Until we have better documentation on Data Explorer settings, use the [Cosmos fixtures](https://gitlab.com/datopian/data-explorer/blob/master/__fixtures__/with_widgets/geojson_simple.js) as an example of how to instantiate / configure the Data Explorer.
 
-### Serialized state 
+### Serialized state
 
 `store->serializedState` is a representation of the application state _without fetched data_
 A data-explorer can be "hydrated" using the serialized state, it will refetch the data, and will render in the same state it was exported in
@@ -97,10 +103,12 @@ To add a translation to a new language to the data explorer you need to:
   ```bash
   git clone git@gitlab.com:datopian/data-explorer.git
   ```
+
 2. go to `src/i18n/locales/` folder
 3. add a new sub-folder with locale name and the new language json file (e.g. `src/i18n/locales/ru/translation.json`)
 4. add the new file to resources settings in `i18n.js`:
 `src/i18n/i18n.js`:
+
 ```javascript
 import en from './locales/en/translation.json'
 import da from './locales/da/translation.json'
@@ -114,6 +122,7 @@ import ru from './locales/ru/translation.json'
       },
     ...
 ```
+
 5. create a merge request with the changes
 
 ### Add a translation To a Component
@@ -121,13 +130,16 @@ import ru from './locales/ru/translation.json'
 Some strings may come from a component, to add translation for them will require some extra steps, e.g. datapackage-views-js:
 
 1. clone the repository
+
   ```bash
   https://github.com/datopian/datapackage-views-js.git
   ```
+
 2. go to `src/i18n/locales/` folder
 3. add a new sub-folder with locale name and the new language json file (e.g. `src/i18n/locales/ru/translation.json`)
 4. add the new file to resources settings in `i18n.js`:
 `src/i18n/i18n.js`:
+
 ```javascript
 ...
 import ru from './locales/ru/translation.json'
@@ -138,6 +150,7 @@ import ru from './locales/ru/translation.json'
     },
     ...
 ```
+
 5. create a pull request for datapackage-views-js
 6. get the new datapackage-views-js version after merging (e.g. 1.3.0)
 7. clone data-explorer
@@ -145,6 +158,7 @@ import ru from './locales/ru/translation.json'
   a. update package.json
   b. run `yarn install`
 9. add the component's translations path to Data Explorer:
+
 ```javascript
 import en from './locales/en/translation.json'
 import da from './locales/da/translation.json'
@@ -158,6 +172,7 @@ import ru from './locales/ru/translation.json'
       },
     ...
 ```
+
 10. create a merge request for data-explorer
 
 ### Testing a Newly Added Language
@@ -175,11 +190,10 @@ Language detection rules are determined by `detection` option in `src/i18n/i18n.
 ### Copy bundle files to theme's `public` directory
 
 ```bash
-$ cp data-explorer/build/static/js/*.js frontend-v2/themes/your_theme/public/js
-$ cp data-explorer/build/static/js/*.map frontend-v2/themes/your_theme/public/js
-$ cp data-explorer/build/static/css/* frontend-v2/themes/your_theme/public/css
+cp data-explorer/build/static/js/*.js frontend-v2/themes/your_theme/public/js
+cp data-explorer/build/static/js/*.map frontend-v2/themes/your_theme/public/js
+cp data-explorer/build/static/css/* frontend-v2/themes/your_theme/public/css
 ```
-
 
 #### Note on app bundles
 
@@ -188,13 +202,13 @@ The bundled resources have a hash in the filename, for example `2.a3e71132.chunk
 During development it may be preferable to remove the hash from the file name to avoid having to update the script tag during iteration, for example
 
 ```bash
-$ mv 2.a3e71132.chunk.js 2.chunk.js
+mv 2.a3e71132.chunk.js 2.chunk.js
 ```
 
 A couple caveats:
+
 * The `.map` file names should remain the same so that they are loaded properly
 * Browser cache may need to be invalidated manually to ensure that the latest script is loaded
-
 
 ### Require Data Explorer resources in NG theme template
 
@@ -218,9 +232,9 @@ In `/themes/your-theme/views/your-template-wth-explplorer.html`
   const datapackage = {
     resources: [{resource}], // single resource for this view
     views: [...], // can be 3 views aka widgets
-    controls: { 
+    controls: {
       showChartBuilder: true,
-      showMapBuilder: true 
+      showMapBuilder: true
     }
   }
 </srcipt>
@@ -237,6 +251,7 @@ Each Data Explorer instance needs a corresponding `<div>` in the DOM. For exampl
 ```
 
 Note that each container div needs the following attributes:
+
 * `class="data-explorer"` (All explorer divs should have this class)
 * `id="data-explorer-0"` (1, 2, etc...)
 * `data-datapackage=`{'{JSON CONFIG}'}` (A valid JSON configuration)
@@ -249,7 +264,7 @@ Note that each container div needs the following attributes:
 <script type="text/javascript" src="/static/js/main.chunk.js"></script>
 ```
 
-*NOTE* that the scripts should be loaded _after the container divs are in the DOM, typically by placing the `<script>` tags at the bottom of the footer_
+_NOTE_ that the scripts should be loaded _after the container divs are in the DOM, typically by placing the `<script>` tags at the bottom of the footer_
 
 See [a real-world example here](https://gitlab.com/datopian/clients/ckan-montreal/blob/master/views/showcase.html)
 
@@ -262,6 +277,7 @@ You need to have **node version >= 12** in order to build files. Otherwise a 'he
 ### Component changes
 
 If the changes involve component updates that live in separate repositories make sure to upgrade them too before building:
+
 1. Prepare the component with dist version (eg run yarn build:package in the component repo, see [this](/docs/dms/data-explorer/datastore-query-builder#release) for an example)
 2. run `yarn add <package>` to get latest changes, e.g. `yarn add @datopian/datastore-query-builder` (do not use `yarn upgrade`, see here on why https://github.com/datopian/data-explorer/issues/28#issuecomment-700792966)
 3. you can verify changes in `yarn.lock` - there should be the latest component commit id

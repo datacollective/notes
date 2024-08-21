@@ -50,7 +50,6 @@ As a Dataset Owner I want to grant different levels of access to resources in a 
 
 As an Org/Team manager I don't want to have to add everyone in my team again in CKAN when i have this already in LDAP so that I save time and avoid risk things go out of sync
 
-
 ### Not Permissions (?)
 
 #### Pre-Release Limits on Datasets

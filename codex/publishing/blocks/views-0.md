@@ -42,24 +42,24 @@ Finally, you need to connect your view with the underlying data source in the `d
 ...
 "resources": [
   {
-  	"name": "mydata"
-  	"path": "mydata.csv",
-  	"schema": ...
+   "name": "mydata"
+   "path": "mydata.csv",
+   "schema": ...
   }
 ],
 "views": [
   {
-  	"name": "graph-1",
-  	"title": "My awesome view",
-  	// the data to connect to this view
-  	"resources": ["mydata"],
-  	// specType here is optional as simple is the default
-  	"specType": "simple",
-  	"spec": {
-  		"type": "line",
-  		"group": "x",
-  		"series": [ "y", "z" ]
-  	}
+   "name": "graph-1",
+   "title": "My awesome view",
+   // the data to connect to this view
+   "resources": ["mydata"],
+   // specType here is optional as simple is the default
+   "specType": "simple",
+   "spec": {
+    "type": "line",
+    "group": "x",
+    "series": [ "y", "z" ]
+   }
   }
 ]
 ```

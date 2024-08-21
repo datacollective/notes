@@ -1,6 +1,6 @@
-# Relationships (between Datasets)
+#  Relationships (between Datasets)
 
-## Why dataset relationships are a ~~bad~~ complex idea ...
+## Why dataset relationships are a ~~bad~~ complex idea
 
 Idea is simple: I want to show relationships between datasets e.g.
 
@@ -24,4 +24,4 @@ But **why** do you want that? What does the user want to do? That turns out to b
   * parent_of
 * CKAN relationships module not really maintained - https://github.com/ckan/ckan/issues/4212 (Fix, document and rewrite tests for dataset relationships (or remove) - 30 apr 2018 - with no movement on it)
   * Some good example use cases
-* https://github.com/ckan/ckan/wiki/Dataset-relationships 
+* https://github.com/ckan/ckan/wiki/Dataset-relationships

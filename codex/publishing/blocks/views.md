@@ -60,7 +60,6 @@ Definitions for feature clusters
 
 [Data Explorer]: /docs/dms/data-explorer
 
-
 ## CKAN v2
 
 In CKAN v2 and earlier this is provided by the internal view object plus ReclineJS.
@@ -114,4 +113,3 @@ See:
 * [Data Explorer][] page in this site.
 
 For more on the technical background see the [Views Design page &raquo;](/docs/dms/views/design).
-

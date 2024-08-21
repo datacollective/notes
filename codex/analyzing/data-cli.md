@@ -21,7 +21,7 @@ http://datahub.io/user-name/data-package-name
 
 That's it! Your data is online. You can make your data public or private, add some pretty graphics, and many more. Please read https://datahub.io/docs for details.
 
-## Usage examples:
+## Usage examples
 
 Here we show examples of usage for common `data` commands. To see the full command documentation click on the command name or proceed to the [help pages](https://github.com/datahq/data-cli/tree/master/docs).
 
@@ -224,7 +224,9 @@ $ data help push
 ```
 npm install data-cli --global
 ```
+
 After installation you can run `data-cli` by the name `data`:
+
 ```
 data --version
 > 0.8.9

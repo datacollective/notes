@@ -7,7 +7,6 @@ Design of [Views](/docs/dms/views).
 >[!tip]
 This is from https://specs.frictionlessdata.io/views/#concepts-and-background
 
-
 To generate visualizations you usually want the following 3 types of information:
 
 - metadata: e.g. title of graph, credits etc
@@ -31,10 +30,10 @@ From this description it should be clear that the latter two data specs -- locat
 
 However, in many visualization tools -- including specs like Vega -- these items are combined together. This is understandable as these tools seek to offer users a "complete solution". However, **decoupling these parts and having clearly defined interfaces would offer significant benefits**:
 
-* Extensability: it would be easier to extend and adapt the system. For example, adding new data import options could be done without changing the graph system.
-* Composability: we can combine different parts together in different ways. For example, data import and transformation could be used for generating data for tabular display as well as graphing.
-* Reusability: we want to reuse existing tools and specifications wherever possible. If we keep the specs relatively separate we can reuse the best spec for each job.
-* Reliability: when the system is decoupled it is easier to test and check.
+- Extensability: it would be easier to extend and adapt the system. For example, adding new data import options could be done without changing the graph system.
+- Composability: we can combine different parts together in different ways. For example, data import and transformation could be used for generating data for tabular display as well as graphing.
+- Reusability: we want to reuse existing tools and specifications wherever possible. If we keep the specs relatively separate we can reuse the best spec for each job.
+- Reliability: when the system is decoupled it is easier to test and check.
 
 In summary, a smaller pieces, loosely joined makes it easier to adapt and evolve the specs and the associated tooling.
 
@@ -77,17 +76,16 @@ graph LR
 
 Notes:
 
-* Implemented paths are shown in lightblue.
-* Left-most column (Recline): pre-specs that we can convert to our standard specs
-* Second-from-left column: DP View spec types.
-* Second-from-right column: the graphing libraries we can use (which all output to SVG)
+- Implemented paths are shown in lightblue.
+- Left-most column (Recline): pre-specs that we can convert to our standard specs
+- Second-from-left column: DP View spec types.
+- Second-from-right column: the graphing libraries we can use (which all output to SVG)
 
 ### Geo support
 
 >[!note]Support for customizing map is limited to JS atm - there is no real map "spec" in JSON yet beyond the trivial version.
 
 >[!note]Vega has some geo support but geo here means full geojson style mapping.
-
 
 ```mermaid
 graph LR
@@ -116,4 +114,3 @@ graph LR
 ***Figure 3: From Data Package View to Rendered output flow (richer version of diagram 1)***
 
 <img src="https://docs.google.com/drawings/d/1M_6Vcal4PPSHpuKpzJQGvRUbPb5yeaAdRHomIIbfnlY/pub?w=790&h=1402" />
-

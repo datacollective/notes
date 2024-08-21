@@ -31,7 +31,7 @@ At the other end of the spectrum, we could have a multi-stage and complex proces
 
 * Multiple (simultaneous) resource upload with shared metadata e.g. I'm creating a timeseries dataset with the last 12 months of data and I want each file to share the same column information but to have different titles
 * A variety of metadata profiles
-* Data validation (prior to ingest) including checking for PII (personally identifiable infromation) 
+* Data validation (prior to ingest) including checking for PII (personally identifiable infromation)
 * Complex workflow related to approval e.g. only publish if at least two people have approved
 * Embargoing (only make public at time X)
 
@@ -57,7 +57,7 @@ When adding a resource to a dataset I want to be able to edit the metadata whils
 
 When uploading a resource's data as part of adding a resource to a dataset I want to see upload progress so that I have a sense of how long this will take
 
-When adding resources to a dataset I want to be able to add and upload multiple files at once so that I save time and make one big change 
+When adding resources to a dataset I want to be able to add and upload multiple files at once so that I save time and make one big change
 
 When adding a resource which is tabular (e.g. csv, excel) I want to enter the (table) schema (i.e. the names, description and types of columns) so that my data is more useable, presentable, importable (e.g. to DataStore) and validatable
 
@@ -71,7 +71,6 @@ The domain model here is that of the [DMS](/docs/dms/dms) and we recommend visit
 * Dataset
 * Resource
 
-[DMS]: /docs/dms/dms
 
 ### Principles
 
@@ -116,7 +115,6 @@ a --> b
 b -.-> d
 d -.-> c
 ```
-
 
 ```mermaid
 graph LR
@@ -195,23 +193,20 @@ addmeta -.-> save
 ```
 
 >[!tip]Comment: The file driven approach is preferable.
-We think the "file driven" approach where the flow starts with a user adding and uploading a file (and then adding metadata) is preferable to a metadata driven approach where you start with a dataset and metadata and then add files (as is the default today in CKAN).  
+We think the "file driven" approach where the flow starts with a user adding and uploading a file (and then adding metadata) is preferable to a metadata driven approach where you start with a dataset and metadata and then add files (as is the default today in CKAN).
 
-Why do we think a file driven approach is better? a) a file is what the user has immediately to hand b) it is concrete whilst "metadata" is abstract c) common tools for storing files e.g. Dropbox or Google Drive start with providing a file - only later, and optionally, do you rename it, move it etc. 
+Why do we think a file driven approach is better? a) a file is what the user has immediately to hand b) it is concrete whilst "metadata" is abstract c) common tools for storing files e.g. Dropbox or Google Drive start with providing a file - only later, and optionally, do you rename it, move it etc.
 
 That said, tools like GitHub or Gitlab require one to create a "project", albeit a minimal one, before being able to push any content. However, GitHub and Gitlab are developer oriented tools that can assume a willingness to tolerate a slightly more cumbersome UX. Furthermore, the default use case is that you have a git repo that you wish to push so the the use case of a non-technical user uploading files is clearly secondary. Finally, in these systems you can create a project just to have an issue tracker or wiki (without having fiile storage). In this case, creating the project first makes sense.
 
 In a DMS, we are often dealing with non-technical or semi-technical users. Thus, providing a simple, intuitive flow is preferable. That said, one may still have a very lightweight project creation flow so that we have a container for the files (just as in, say, Google Drive you already have a folder to put your files in).
 
-
 ### Dataset Metadata editor
 
 There are lots of ways this can be designed. We always encourage minimalism.
 
-
 * Adding information e.g. license, description, author …
 * ? Default the license (and explain what the license means …)
-
 
 ### Add a Resource
 
@@ -234,7 +229,6 @@ metadata --> save
 Notes
 
 * Alternative to "Select a file" would be to just "Link" to a file that is already online and available
-
 
 ### Schema (Data Dictionary) for a Resource
 
@@ -279,7 +273,6 @@ Advanced:
 * Displaying validation errors could/should be live as you change types …  (highlight with a hover)
 * add semantic/taxonomy option (after format) i.e. ability to set rich type
 
-
 #### Overview Deck
 
 **Deck**: This deck (Feb 2019) provides an overview of the core flow publishing a single tabular file e.g. CSV and includes a a basic UI mockup illustrating the flow described below.
@@ -318,7 +311,6 @@ For v1: could assume small data (e.g. < 5Mb) so we can load into memory ...?
 
 5. Publish (atm: just download metadata (and cleaned data)
 
-
 #### 1. Load
 
 1. User drops a file or uploads a file
@@ -332,10 +324,10 @@ For v1: could assume small data (e.g. < 5Mb) so we can load into memory ...?
       * How do we find something that just does file selection and provides us with the object
     * [Final output] => a raw file object, raw file info (? or we already pass to data.js?)
 
-2.  Detect type / format (from file name ...)
+2. Detect type / format (from file name ...)
 
-  * Prompt user to confirm the guess (or proceed automatically if guessed)?
-  * Tooling: data.js already does this ...
+* Prompt user to confirm the guess (or proceed automatically if guessed)?
+* Tooling: data.js already does this ...
 
 3. Choose the data (e.g. sheets from excel)
 
@@ -353,7 +345,6 @@ For v1: could assume small data (e.g. < 5Mb) so we can load into memory ...?
 2. Preview the data and show structural errors
 
 3. [Optional / v2] Simple ETL in browser to correct this
-
 
 #### 3. Table metadata
 
@@ -380,7 +371,6 @@ Add the general metadata.
 
 Show the dataresource.json and datapackage.json for now ...
 
-
 ## CKAN v2
 
 In CKAN 2 the data publishing flow is a integral part of core CKAN. See this section of the user guide for a walkhthrough: https://docs.ckan.org/en/2.9/user-guide.html#features-for-publishers
@@ -404,11 +394,10 @@ https://extensions.ckan.org/extension/dictionary/
   * Development: miss out on modern dev stack
 * No client-side direct to cloud upload etc
 * Extension model has got complex and cumbersome: the template inheritance model is now somewhat byzantine to navigate. Changing data structures can operate at multiple levels.
-  * The extension approach is "inheritance" based 
+  * The extension approach is "inheritance" based
 * ckanext-scheming uses its own DSL. Today, one would probably use JSON Schema and use a javascript framework.
 
 In short, building a rich UI like this today would almost certainly be done in pure JS in something like React.
-
 
 ## CKAN v3
 
@@ -418,10 +407,8 @@ We have developed a "DataPub(lishing)" framework that provides core components a
 
 https://github.com/datopian/datapub/
 
-
 ### Design
 
 See [Design page &raquo;][design]
 
 [design]: /docs/dms/publish/design
-

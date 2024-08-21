@@ -82,14 +82,13 @@ In addition, in terms of proper data infrastructure and data engineering, a Data
 * For example, suppose your data engineering team are building out data pipelines. These pipelines pull in a variety of datasets, integrate and transform them and then save the results. How are they going to track what datasets they are using and what they have produced? They are going to need a catalog. Rather than inventing their own (the classic "json file in git or spreadsheet in google docs etc" you want them to use a proper catalog (or integrate with your existing one).
 * Using an open source service-oriented data portal framework like CKAN you can rapidly integrate and scale out your data orchestration. It provides a "small pieces, loosely joined" approach to developing your data infrastructure starting from the basics: what datasets do you have, what datasets do you want to create?
 
-
 ## What does a Data Portal do?
 
 ### A Data Portal provides a Catalog
 
 In its most basic essence, a Data Portal is a catalog of datasets. Even here there are degrees: at its simplest a catalog is just a list of dataset names and links; whilst more sophisticated catalogs will have elaborate metadata on each dataset.
 
-### And Much More ...
+### And Much More
 
 Along with the essential basic catalog features, modern portals now incorporate an extensive range of functionality for organizing, structuring and presenting data including:
 
@@ -183,9 +182,9 @@ datavalidation[Data Validation]
 filestore[FileStore]
 siteadmin[Site Admin]
 
-dms --> metadata 
-dms --> activity 
-dms --> catalogsearch 
+dms --> metadata
+dms --> activity
+dms --> catalogsearch
 dms --> showcase
 dms --> resource
 dms --> multi
@@ -222,10 +221,10 @@ etl --> datavalidation
   * Newsletter
 * DMS Basic - Catalog: manage/catalog multiple formats of data
   * Activity Streams
-  * Data Showcase (aka Dataset view page) - 
+  * Data Showcase (aka Dataset view page) -
     * Resource previews
   * Metadata creation and managemet
-    * Multi-language metadata 
+    * Multi-language metadata
   * Data import and storage
     * Storing data
   * Data Catalog searching
@@ -244,7 +243,6 @@ etl --> datavalidation
   * DataPusher
   * xLoader
 * (Data) Explorer: Visualizations and Dashboards
-
 
 Data Validation
 
@@ -269,18 +267,17 @@ It is both usable out of the box and can also be utilized as a powerful framewor
 
 CKAN's combintation of open source codebase and enterprise support make it uniquely attractive for organizations looking to build customized, enterprise-grade solutions.
 
-
 ## Appendix
 
 TODO: From Data Portal to DataHub (or Data Management System).
 
 ### Is a Data Catalog the same as a Data Portal? (Yes)
 
-Is a data catalog the same as a data portal? Yes. Data Portals are the evolution of data catalogs. 
+Is a data catalog the same as a data portal? Yes. Data Portals are the evolution of data catalogs.
 
 Data Portals were originally called a variety of names including "Data Catalog". As catalogs grew in features they have evolved into a full portal.
 
-### Open Data Portals and Internal Data Portals.
+### Open Data Portals and Internal Data Portals
 
 Many initial data portals were "open" or public: that is anyone could access them -- and the data they listed. This reflected the fact that these data portals were set up by governments seeking to maximize the value of their data by sharing it as widely as possible.
 

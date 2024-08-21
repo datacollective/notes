@@ -68,19 +68,16 @@ CKAN integration:
 
 **Status**: Beta. AirCan and ckanext-aircan are in active use in production. GUI is under development.
 
-**Documentation**: including setup and use of the all the components including CKAN integration can be found in https://github.com/datopian/aircan 
-
+**Documentation**: including setup and use of the all the components including CKAN integration can be found in https://github.com/datopian/aircan
 
 ### Design
 
 See [Design page](/docs/dms/flows/design).
 
-
 ## Links
 
 * [Research](/docs/dms/flows/research) - list of tools and concepts with some analysis
 * [History](/docs/dms/flows/history) - some previous thinking and work (2016-2019)
-
 
 ## Appendix: Our Previous Work
 

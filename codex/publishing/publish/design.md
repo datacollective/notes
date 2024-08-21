@@ -12,7 +12,7 @@ This application would form the UI part of a "manual" user flow of importing a d
 
 As a product, the Publish system should be thought of more as a framework than a single solution: a set of patterns, components and flows that can be composed together to build different applications and workflows.
 
-A given solution is created by composing together different components into an overall flow. 
+A given solution is created by composing together different components into an overall flow.
 
 This approach is is designed to be extensible so that new workflows and their requirements can be easily accommodated.
 
@@ -24,7 +24,7 @@ This approach is is designed to be extensible so that new workflows and their re
 * Speed: not only responsiveness, but also speed to being "done"
 * Tabular: focus on tabular data to start with
 * Adaptable / Reusable: this system should be rapidly adaptable for other import flows
-	* A copy-and-paste-able template that is then adapt with minor changes
+  * A copy-and-paste-able template that is then adapt with minor changes
   * Over time this may evolve to something configurable
 * CKAN-compatible (?): (Longer term) e.g. be able to reuse ckanext-scheming config
 
@@ -86,7 +86,7 @@ Working assumptions
 
 Qu:
 
-* Do we even permit the super simple option - it's attractive but it brings some complexity in the UI 
+* Do we even permit the super simple option - it's attractive but it brings some complexity in the UI
 (either we need to make user provide project/dataset level metadata at end or we guess it for them and guessing usually goes wrong). Note that Github makes you create the "project" and its repo before you can push anything.
 
 ## Components
@@ -94,7 +94,7 @@ Qu:
 UI
 
 * File uploader
-* Resource 
+* Resource
 
 SDK
 
@@ -108,7 +108,7 @@ SDK
 
 Task brainstorm
 
-* 
+*
 
 ```mermaid
 graph TD
@@ -122,11 +122,11 @@ Atm we implement from "scratch". Could we use an "off the shelf" solution e.g. u
 
 Impressions of uppy:
 
-- Good support
-- Open-source MIT
-- Beautiful design
-- Customizable
-- Support (dropbox, google drive, AWS S3, Tus, XHR)
+* Good support
+* Open-source MIT
+* Beautiful design
+* Customizable
+* Support (dropbox, google drive, AWS S3, Tus, XHR)
 
 Question:
 
@@ -135,13 +135,12 @@ Question:
 
 [f11s]: https://f11s.com/
 
-
 ## Previous work
 
 * 2019: https://github.com/datopian/import-ui - alpha React App. Working demo at http://datopian.github.io/import-ui
 * 2018: https://github.com/datopian/data-import-ui (unfinished React App)
-* https://github.com/datahq/pm/issues/90 
-* https://github.com/frictionlessdata/datapackage-ui 
+* https://github.com/datahq/pm/issues/90
+* https://github.com/frictionlessdata/datapackage-ui
 * Cf also openspending version
   * can take from openspending but do it right :-)
 * the spreadsheet view is best - see [example](https://docs.google.com/spreadsheets/d/1RoKbiTXaxT_N5Vio93Er-BA3ev3iwWlu4KYv-M7kvqc/edit#gid=0)
@@ -149,7 +148,6 @@ Question:
 * v1 should assume tidy data
 * (?) v2 should allow for some simple wrangling to get tidy data (??)
 * This is a template for people building their own configurers
-
 
 ### Original Flow for DataHub `data` cli in 2016
 
@@ -180,22 +178,21 @@ Details
 1. Detect file type
 
     1. file extension
-      1. Offer guess
-      2. Probable guess (options?)
-      3. Unknown - tell us
+    1. Offer guess
+    2. Probable guess (options?)
+    3. Unknown - tell us
     2. Detect encoding (for CSV)
 
 2. Choose the data
     1. Good data case
-      1. 1 sheet => ok
-      2. Multiple sheets guess and offer
-      3. Multiple sheets - ask them (which to include)
+    1. 1 sheet => ok
+    2. Multiple sheets guess and offer
+    3. Multiple sheets - ask them (which to include)
     2. bad data case - e.g. selecting within table
 
 3. Review the headers
     * Here is what we found
     * More than one option for headers - try to reconcile
-
 
 ## Appendix: Integration into CKAN v2 Flow
 
@@ -260,7 +257,6 @@ graph TD
 start --> remove
 remove --> showupload[Show Upload/Link options]
 ```
-
 
 ## Appendix: Project Creation Flow Comparison
 

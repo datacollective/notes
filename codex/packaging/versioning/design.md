@@ -1,4 +1,4 @@
-# Versioning 
+# Versioning
 
 ## The Advantages of a Git-Based Approach
 
@@ -136,8 +136,6 @@ Cons:
 * Some weird behaviour if i pull and mod a data file and then push - where does it now go? (not that weird though: my command line tool can take care of this)
   * Guess you would set a default storage "server/service"
 
-
-
 ---
 
 ## Research
@@ -146,14 +144,12 @@ Cons:
 
 See https://git-scm.com/book/en/v2/Git-Internals-Plumbing-and-Porcelain
 
-
-### Git-Hubs and how they work ...
+### Git-Hubs and how they work
 
 * It turns out git really needs to be backed onto disk (you couldn't put git on s3 because of latency)
   * This has a good analysis https://github.com/go-gitea/gitea/issues/2959 that led me to this excellent post https://github.blog/2016-04-05-introducing-dgit/
 * however, gitlab have built a git rpc service you can integrate with that abstracts git access https://gitlab.com/gitlab-org/gitaly
   * Gitaly is a Git RPC service for handling all the git calls made by GitLab. As of GitLab 11.5, almost all application code accesses Git repositories through Gitaly instead of direct disk access. GitLab.com production no longer uses direct disk access to touch Git repositories
-
 
 ### Git-Hub APIs for creating files etc
 
@@ -161,7 +157,6 @@ See https://git-scm.com/book/en/v2/Git-Internals-Plumbing-and-Porcelain
 * Gitea: Can create and update files (but not in bulk)
   * https://try.gitea.io/api/swagger#/repository/repoCreateFile
   * https://try.gitea.io/api/swagger#/repository/repoUpdateFile
-
 
 ### Git LFS
 
@@ -188,6 +183,7 @@ Implementation has 3 components:
 API https://github.com/git-lfs/git-lfs/blob/master/docs/api/README.md
 
 #### File Storage flow
+
 https://github.com/datopian/datahub-client/blob/master/lib/utils/datahub.js#L22
 
 In storing a file there are the following steps
@@ -214,7 +210,7 @@ Basic Transfers
 https://github.com/git-lfs/git-lfs/blob/master/docs/api/basic-transfers.md
 
 > The Basic transfer API is a simple, generic API for directly uploading and downloading LFS objects. Git LFS servers can offload object storage to cloud services like S3, or implement this API natively.
-> 
+>
 > This is the original transfer adapter. All Git LFS clients and servers SHOULD support it, and default to it if the Batch API request or response do not specify a transfer property.
 
 They say that tus.io may be supported ... (and that in theory supports s3 tho' issues with multipart https://tus.io/blog/2016/03/07/tus-s3-backend.html)
@@ -237,7 +233,6 @@ https://github.com/git-lfs/git-lfs/issues/3567
   * https://sqr-001.lsst.io/ => this looks really promising. They built their own lfs server.
 * Does it support multipart downloads NO
   * See "Please add multipart file downloads" https://github.com/git-lfs/git-lfs/issues/802 Proposed 2015 and still open
-
 
 ### Git Annex
 
@@ -262,7 +257,6 @@ let value = await byteStorage(key) // could return a promise, or a stream, whate
 Garbage collection: how do you do it ...
 
 * https://www.usenix.org/system/files/conference/fast13/fast13-final91.pdf - 2013 paper. Sort of useful.
-
 
 ### DVC
 

@@ -71,7 +71,6 @@ pushdatacopy -. log .-> logstore
 
 We will use AirFlow.
 
-
 ## Research
 
 ### What is a Tabular Data Resource?
@@ -88,6 +87,7 @@ NB: even if you want to go direct loading route (a la XLoader) and forget types 
 ### What is datastore and how to create the DataStore entry
 
 https://github.com/ckan/ckan/tree/master/ckanext/datastore
+
 * provides an ad hoc database for storage of structured data from CKAN resources
 * Connection with Datapusher: https://docs.ckan.org/en/2.8/maintaining/datastore.html#datapusher-automatically-add-data-to-the-datastore
 * Datastore API: https://docs.ckan.org/en/2.8/maintaining/datastore.html#the-datastore-api

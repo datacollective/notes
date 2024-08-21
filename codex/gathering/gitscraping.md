@@ -26,7 +26,7 @@ Key features include:
 
 This insight allows us to see harvesting as just like any other ETL process. At the same time, the specific nature of *this* ETL process e.g. that it is about collecting dataset metadata, allows us to design the system in specific ways.
 
-We can use standard ETL tools to do harvesting, loosely coupling their operation to the CKAN Classic (or CKAN Next Gen) metastore. 
+We can use standard ETL tools to do harvesting, loosely coupling their operation to the CKAN Classic (or CKAN Next Gen) metastore.
 
 ### Domain Model
 
@@ -49,7 +49,7 @@ A Harvesting system has the following key subsystems and components:
 * **Pipelines**: a standard way of creating pipelines and processors in code
 * **Runner**: a system for executing Runs of the harvesters. This should be queue based.
 * **Logging**: a system for logging (and reporting) including of errors
-* **Scratch (Store)**: Intermediate storage for temporary or partial outputs of the 
+* **Scratch (Store)**: Intermediate storage for temporary or partial outputs of the
 * **API**: interfaces the runner and errors
 
 #### Sources and Configuration
@@ -66,8 +66,7 @@ A Harvesting system has the following key subsystems and components:
 
 * **MetaStore**: the store for harvested metadata -- this is considered to be outside the harvesting system itself
 
-{/* <!-- TODO: explain how each of these is implemented in NG harvesting (maybe in a table) and compare with Classic --> */}
-
+{/*<!-- TODO: explain how each of these is implemented in NG harvesting (maybe in a table) and compare with Classic -->*/}
 
 ## CKAN v2
 
@@ -77,7 +76,7 @@ This extension stores configuration in the main DB and harvesters run off a queu
 
 [ckanext]: https://github.com/ckan/ckanext-harvest
 
-### Limitations 
+### Limitations
 
 The main problem is that ckanext-harvest builds its own bespoke mini-ETL system and builds this into CKAN. A bespoke system is less powerful and flexible, harder to maintain etc and building it in makes CKAN more bulky (conceptually, resource wise etc) and creates unnecessary coupling.
 
@@ -97,7 +96,6 @@ Not so good:
 * Maintenance Status - Some maintenance but not super it looks like but quite a lot outstanding (as of Aug 2019):
   * 47 [open issues](https://github.com/ckan/ckanext-harvest/issues)
   * 6 [open pull requests](https://github.com/ckan/ckanext-harvest/pulls) (some over a year old)
- 
 
 ## CKAN v3
 
@@ -169,7 +167,6 @@ class runapi started;
 class runui,logging todo;
 ```
 
-
 ### User Journey
 
 * Harvest Curator goes to WUI for Sources and does Create Harvest Source ...
@@ -178,7 +175,7 @@ class runui,logging todo;
 * To run a harvest source you go to the new Run UI interface
   * It lists all harvest sources like the harvest source ...
 * Click on Run (even if this is just to set up the schedule ...)
-* Go to Job page for this run which shows the status of this run and any results ... 
+* Go to Job page for this run which shows the status of this run and any results ...
 * [TODO: how do we link up harvest sources to runs]
 
 ### Pipelines
@@ -209,7 +206,7 @@ load --> ckan((CKAN))
 This pattern has these benefits:
 
 * Load functionality to be reused across Harvest Pipelines (the same Load functionality can be used again and again)
-* Cleaner testing: you can test extract and load without needing to have a CKAN instance 
+* Cleaner testing: you can test extract and load without needing to have a CKAN instance
 * Ability to reuse Data Package tooling
 
 #### Pipeline Example: Fetch and process a data.json
@@ -218,7 +215,7 @@ This pattern has these benefits:
   * Validate
 * **Transform**: Split into datasets and then transform into data packages
   * Save to local
-* **Transform 2** check the difference and write to the existing DB. 
+* **Transform 2** check the difference and write to the existing DB.
 * **Load**: Write to DB (CKAN metastore / DB)
 
 ```mermaid
@@ -424,12 +421,11 @@ metastore --> api
 config --> api
 ```
 
-### How do I ...
+### How do I
 
 Support parent-child relationships in harvested datasets e.g. in data.json?
 
 Enhance / transform incoming datasets e.g. assigning topics based on sources e.g. this is geodata
-
 
 ## Appendix: CKAN Classic Harvesting in Detail
 
@@ -454,12 +450,11 @@ Existing harvesters
 * DCAT - https://github.com/ckan/ckanext-dcat/tree/master/ckanext/dcat/harvesters
 * Spatial - https://github.com/ckan/ckanext-spatial/tree/master/ckanext/spatial/harvesters
 
-
 ### Domain model
 
 See https://github.com/ckan/ckanext-harvest/blob/master/ckanext/harvest/model/__init__.py
 
-* HarvestSource - a remote source for harvesting datasets from e.g. a CSW server or CKAN instance 
+* HarvestSource - a remote source for harvesting datasets from e.g. a CSW server or CKAN instance
 * HarvestJob - a job to do the harvesting (done in 2 stages: gather and then fetch and import). This is basically state for the overall process of doing a harvest.
 * HarvestObject - job to harvest one dataset. Also holds dataset on the remote instance (id / url)
 * HarvestGatherError
@@ -536,9 +531,9 @@ harvest_log_table = Table(
 ### Flow
 
 0. *Harvest run:* a regular run of the Harvester that generates a HarvestJob object. This is then passed to gather stage. This is what is generated by cron `harvest run` execution (or from web UI)
-1.  The **gather** stage compiles all the resource identifiers that need to be fetched in the next stage (e.g. in a CSW server, it will perform a GetRecords operation).
-2.  The **fetch** stage gets the contents of the remote objects and stores them in the database (e.g. in a CSW server, it will perform an GetRecordById operations).
-3.  The **import** stage performs any necessary actions on the fetched resource (generally creating a CKAN package, but it can be anything the extension needs).
+1. The **gather** stage compiles all the resource identifiers that need to be fetched in the next stage (e.g. in a CSW server, it will perform a GetRecords operation).
+2. The **fetch** stage gets the contents of the remote objects and stores them in the database (e.g. in a CSW server, it will perform an GetRecordById operations).
+3. The **import** stage performs any necessary actions on the fetched resource (generally creating a CKAN package, but it can be anything the extension needs).
 
 ```mermaid
 graph TD
@@ -639,11 +634,9 @@ Clicking on about gives you..
 
 ![](https://i.imgur.com/S9GTl9n.png)
 
-
 Admin view of a particular (Harvest) source
 
 ![](https://i.imgur.com/Loeshhv.png)
-
 
 Edit harvester
 

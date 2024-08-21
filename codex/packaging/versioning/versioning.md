@@ -21,7 +21,6 @@ All the benefits you get with revisioning for code but for data ...
 
 Also worth mentioning is the potential integration with code: now that your data has revisioning too, you can keep in sync between, for example, your machine learning model in code and your training data in the data management system.
 
-
 ### Terminology
 
 Versioning as a term can be confusing because it is ambiguous. For example, when some people say "version" they mean a revision e.g. "does this tool support data versioning" (i.e. does it support recording each change to the data). Whilst, when other people say "version" they mean a release (revision tag) e.g. "what version of this software are you using" (answer: "version 1.3".[^rda]
@@ -43,13 +42,16 @@ Notes:
 * Metadata or metadata and data revisioning: revisioning can be metadata only (it is rarely data only). For example, CKAN (as of v2) only revisions metadata.
 * DAG or linear: revisioning can be simple "linear" revisioning or it can be full "DAG" (directed acyclic graph).
   * Linear: each revision has a single parent and successor e.g.
+
     ```mermaid
     graph LR
 
     a[rev A] --> b[rev B]
     b --> c[rev C]
     ```
+
     * DAG: "DAG" (directed acyclic graph) is where there can be branching and merging e.g.
+
     ```mermaid
     graph LR
 
@@ -58,6 +60,7 @@ Notes:
     b --> d[rev D]
     c --> d
     ```
+
 * Branch labelling and management: with a DAG one can have multiple "branches" rather than just the single "trunk" of the linear case. With branches it can be useful to label these branches and to designate a "master" or primary branch to which new revisions are appended by default.
 
 #### Releases
@@ -106,11 +109,9 @@ The latter two are accomplished via [ckanext-versions][] extension.
 
 [ckanext-versions]: https://github.com/datopian/ckanext-versions
 
-
 ## Design
 
 See [Versioning Design doc](/docs/dms/versioning/design).
-
 
 ## Open Questions
 
