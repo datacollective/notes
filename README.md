@@ -7,9 +7,9 @@ We are a group of individuals interested in Open Data and its potential to empow
 ## Initiatives
 
 - Data Collective [notes, posts, and ideas](https://datahub.io/notes).
-- Newsletter
-- Fireside Chats
-- Community Building (coworking sessions, connection calls, brainstorms)
+- [Newsletter](https://thedatacollective.substack.com/).
+- Fireside Chats.
+- Community Building (coworking sessions, connection calls, brainstorms).
 
 ## Vision
 
