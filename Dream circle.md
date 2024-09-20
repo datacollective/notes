@@ -1,6 +1,11 @@
 # Dream Circle
 
-This is the output of the dream circle we did in August 2024 when forming the collective.
+> [!note]
+> This is the output of the dream circle we did in August 2024 when forming the collective.
+
+## Vision
+
+The vision is to create a cooperative data collective inspired by Mondragon, aiming to empower communities through open data, democratize data access and tools, and engage in collaborative data sensemaking.
 
 ## Raw Dreaming
 
